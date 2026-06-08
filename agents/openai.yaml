@@ -1,0 +1,4 @@
+interface:
+  display_name: "Visual Image Director"
+  short_description: "Plan, preview, generate visual images."
+  default_prompt: "Use visual-image-director to turn my poster or image request into design.md and prompt.md, confirm them, create a thumbnail preview, then generate or locally revise the final image."

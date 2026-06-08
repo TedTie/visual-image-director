@@ -19,6 +19,8 @@ Default to the user's language for support documents and visible text. If the us
 - Ask the user to confirm `design.md` and `prompt.md` before generating `thumbnail-board.png`, unless the user explicitly says to skip confirmation.
 - Ask the user to confirm the thumbnail direction before generating the final image, unless the user explicitly says to skip confirmation.
 - After every document, thumbnail, final image, or revision, run a self-check against the user's requirements. If something is off, revise the artifact before asking for approval.
+- Before final delivery, run an aesthetic calibration pass against the approved thumbnail: keep the thumbnail's composition, visual direction, and style DNA consistent while improving finish, detail, balance, and visual appeal.
+- Do not over-simplify the final image into an amateur, generic, childish, or template-like result. The final image must look intentionally designed and aesthetically polished.
 - For local revisions, first restate the requested change and the locked areas. Then change only the requested local region or issue.
 - Preserve visual continuity across the same chat: palette, materials, lighting, typography mood, layout logic, camera language, and decorative system must stay consistent unless the user requests a new visual direction.
 - Never perform a full redesign when the user asks for a local fix.
@@ -198,6 +200,9 @@ Before final generation:
 
 - Re-read `design.md`, `prompt.md`, `style-used.md`, and the approved thumbnail.
 - Carry forward the approved composition and visual direction.
+- Treat the approved thumbnail as the composition and style anchor, not as a low-fidelity ceiling.
+- Improve the final image's craft: richer detail where appropriate, better spacing, cleaner hierarchy, stronger material/lighting polish, and more deliberate visual tension.
+- Keep the final image aesthetically mature. Avoid results that feel like a basic template, a beginner layout, clip-art assembly, or an image a child could make by placing obvious elements on a flat background.
 - Use the final prompt, not a casual summary.
 - Preserve the selected ratio and visible text requirements.
 
@@ -210,6 +215,8 @@ After final generation, inspect and self-check:
 - Required elements present.
 - Forbidden elements absent.
 - No unintended redesign from the approved thumbnail.
+- Aesthetic calibration: final image is at least as visually compelling as the thumbnail direction, with stronger finish but no style drift.
+- Design maturity: final image is not overly simplified, generic, childish, or visually under-designed.
 
 If there is a correctable issue, revise the image or prompt before presenting it as final.
 
@@ -261,4 +268,4 @@ At delivery, provide:
 - The main artifacts created or updated.
 - A short note on verification: what was checked and whether any risk remains.
 
-Do not claim the final image is complete until the thumbnail/final/revision has been inspected against the user's stated requirements.
+Do not claim the final image is complete until the thumbnail/final/revision has been inspected against the user's stated requirements and the final image passes aesthetic calibration against the approved thumbnail.

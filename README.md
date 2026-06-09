@@ -1,8 +1,57 @@
-# Visual Image Director 使用手册
+# Visual Image Director
 
-`visual-image-director` 是一个用于单张视觉设计和图片修改的 Codex skill。它适合制作海报、社媒图、广告图、封面图、Banner、缩略图、产品视觉图，以及对生成结果或已有图片做局部修改。
+`visual-image-director` 是一个可安装的 Codex skill，用于单张视觉设计和图片修改。它适合制作海报、社媒图、广告图、封面图、Banner、缩略图、产品视觉图，以及对生成结果或已有图片做局部修改。
 
 这个 skill 的核心不是“一句话直接出图”，而是先把想法整理成可确认的设计框架和提示词，再生成缩略图预览，最后才生成最终图片。
+
+## 安装
+
+把这个 repository clone 到 Codex 的 skills 目录即可安装。
+
+### macOS / Linux
+
+```bash
+mkdir -p ~/.codex/skills
+git clone https://github.com/TedTie/visual-image-director.git ~/.codex/skills/visual-image-director
+```
+
+### Windows PowerShell
+
+```powershell
+New-Item -ItemType Directory -Force "$env:USERPROFILE\.codex\skills"
+git clone https://github.com/TedTie/visual-image-director.git "$env:USERPROFILE\.codex\skills\visual-image-director"
+```
+
+如果你设置了自定义 `CODEX_HOME`，请安装到：
+
+```text
+<CODEX_HOME>/skills/visual-image-director
+```
+
+安装后，确认目录里有这些文件：
+
+```text
+visual-image-director/
+  SKILL.md
+  README.md
+  agents/openai.yaml
+```
+
+然后重启 Codex，或开启一个新的 Codex 会话，让 skill 被重新发现。
+
+## 更新
+
+进入已安装的 skill 目录后拉取最新版本：
+
+```bash
+git pull
+```
+
+Windows PowerShell 示例：
+
+```powershell
+git -C "$env:USERPROFILE\.codex\skills\visual-image-director" pull
+```
 
 ## 适合什么时候用
 
@@ -37,7 +86,7 @@
 调用 visual-image-director，把这张图右下角的按钮改成红色，其他部分不要动。
 ```
 
-如果 Codex 已经安装了这个 skill，也可以直接说：
+安装后，也可以直接说：
 
 ```text
 我要做一张海报，按 visual-image-director 的流程来。
@@ -284,26 +333,6 @@ Codex 应该先确认：
 
 ```text
 这版方向不对，整体重做，改成更强烈的赛博朋克视觉。
-```
-
-## 安装位置
-
-当前全局安装路径：
-
-```text
-C:\Users\Teddy Tie\.codex\skills\visual-image-director
-```
-
-仓库路径：
-
-```text
-C:\Users\Teddy Tie\Documents\Image Refiner\visual-image-director
-```
-
-GitHub repository：
-
-```text
-https://github.com/TedTie/visual-image-director
 ```
 
 ## 使用原则

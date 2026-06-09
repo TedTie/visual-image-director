@@ -1,6 +1,6 @@
 ---
 name: visual-image-director
-description: Plan, preview, generate, and revise single-image visual designs such as posters, social posts, banners, covers, product visuals, ads, thumbnails, and edited images. Use when the user wants a disciplined image workflow with design.md, prompt.md, style-used.md, thumbnail-board.png approval, final image generation, and localized revisions that preserve visual continuity unless a full redesign is requested.
+description: Plan, preview, generate, code-render, and revise single-image raster visual designs such as posters, social posts, banners, covers, product visuals, ads, thumbnails, and edited images. Use when the user wants a disciplined workflow with design.md, prompt.md, style-used.md, thumbnail-board.png approval, final high-resolution PNG delivery, localized revisions that preserve visual continuity, or complex visuals that may use SVG, HTML, CSS, canvas, browser rendering, or other code as intermediate production assets.
 ---
 
 # Visual Image Director
@@ -41,6 +41,7 @@ Expected artifacts:
 - `thumbnail-board.png`: preview of composition, rhythm, and approximate visual direction.
 - `final.png`: final approved image, or a clearly named format variant.
 - `revision-log.md`: record of requested local edits, locked areas, and resulting versions.
+- `render/` or clearly named source files: optional code-assisted production assets such as SVG, HTML, CSS, canvas scripts, browser screenshots, masks, or compositing notes when they are used to create the final PNG.
 
 Do not overwrite final files unless the user explicitly asks. Use versioned names such as `final-v2.png`, `poster-edited-v3.png`, or `thumbnail-board-v2.png`.
 
@@ -87,6 +88,7 @@ Recommended structure:
 
 ## Goal
 ## Output Format
+## Production Method
 ## Audience And Mood
 ## Visual Concept
 ## Layout Framework
@@ -114,6 +116,12 @@ For edits, specify:
 - What may change.
 - What must remain visually identical.
 
+When a code-assisted raster workflow is useful, specify:
+
+- Which parts are best made with code, such as exact typography, grid systems, charts, diagrams, clean vector shapes, procedural patterns, or precise UI-like composition.
+- Which parts should use image generation, editing, or compositing, such as photographic subjects, painterly detail, material realism, or texture-rich scenes.
+- Final PNG size, aspect ratio, resolution scale, transparent background needs, and any export constraints.
+
 ## `prompt.md` Requirements
 
 Write `prompt.md` as the production prompt file. Include:
@@ -134,6 +142,7 @@ Use case:
 Output:
 Primary request:
 Input image roles:
+Production method:
 Visual style:
 Composition:
 Subject:
@@ -165,6 +174,25 @@ Include:
 - Negative style constraints.
 
 If the user provides a style reference, extract the style into `style-used.md` without importing unrelated visual DNA from previous chats or unrelated files.
+
+## Code-Assisted Raster Workflow
+
+Use SVG, HTML, CSS, canvas, browser rendering, Three.js, charting libraries, or other code-native methods as intermediate production tools when they improve precision, complexity, typography, layout control, repeatability, or visual polish.
+
+Choose a code-assisted path especially for:
+
+- Complex posters, infographics, diagrams, labels, charts, UI-like graphics, grids, data-driven layouts, typographic systems, geometric motifs, or exact brand layouts.
+- Visuals where crisp text, vector-like edges, controlled spacing, or deterministic alignment matter more than purely generative texture.
+- Hybrid compositions where code provides the layout shell, masks, type, symbols, or overlays, and image generation provides photos, illustrations, textures, backgrounds, or subject renders.
+
+Rules for code-assisted work:
+
+- The final user-facing deliverable must be a high-resolution PNG unless the user explicitly asks for another raster format.
+- Save useful intermediate source files in the task output folder, but do not treat SVG, HTML, CSS, screenshots, or source code as the final image.
+- Render or export intermediates at the requested final dimensions, or at a higher scale such as 2x or 3x when the size is not specified.
+- Inspect the exported PNG, not only the source code, before presenting it as a thumbnail, final image, or revision.
+- If text accuracy is important, prefer code-rendered typography or post-composited text over relying on an image generator to spell text.
+- If the user requests a local revision to a code-assisted image, update the source, re-export the PNG, and self-check that locked areas still match the approved direction.
 
 ## Thumbnail Workflow
 
@@ -258,7 +286,7 @@ Use the available image generation/editing capability for thumbnails, final imag
 
 For local image files that need visual inspection, view the image first so the edit target or reference is visible in context.
 
-Do not replace a real image-generation request with HTML, CSS, SVG, browser screenshots, or mock placeholders unless the user explicitly asks for a code-native mockup instead of a raster image.
+Do not replace a raster image request with unfinished code, low-resolution screenshots, or mock placeholders. Code, SVG, HTML, CSS, and browser screenshots are allowed as production intermediates only when they are rasterized, inspected, and delivered as the requested high-resolution PNG.
 
 ## Final Delivery
 
